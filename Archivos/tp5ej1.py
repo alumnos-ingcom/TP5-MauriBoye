@@ -11,7 +11,7 @@ class IngresoIncorrecto(Exception):
     """Esta es la Excepcion para el ingreso incorrecto"""
     pass
 
-def ingreso_numero(mensaje):
+def ingreso_numero_entero(mensaje):
     """
     Esta funcion muestra un mensaje para indicar el ingreso
     de un número entero.
@@ -56,7 +56,7 @@ def marco(texto):
     
 def prueba():
     marco("numero_par_impar()") 
-    numero = ingreso_numero("Ingrese un numero: ")
+    numero = ingreso_numero_entero("Ingrese un numero: ")
     resultado = numero_par_impar(numero)
     if (resultado):
         print(f"{numero} es par")
