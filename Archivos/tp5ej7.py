@@ -25,21 +25,20 @@ def distancia(puntoA, puntoB):
     Esta funcion muestra la distancia entre dos puntos
     """
     if puntoB >= puntoA:
-        distancia = (puntoB) - (puntoA)
+        distancia = puntoB - puntoA
     if puntoB < puntoA:
-        distancia = (puntoA) - (puntoB)
+        distancia = puntoA - puntoB
     return distancia
 
 def prueba():
     tp5ej1.marco("distancia()")
     puntoA = ingreso_numero_flotante("Ingrese el punto A del recorrido: ")
     puntoB = ingreso_numero_flotante("Ingrese el punto B del recorrido: ")
+    total = distancia(puntoA, puntoB)
     if puntoB >= puntoA:
-        print(f"La distancia entre {puntoA} y {puntoB} "
-              f"es {distancia(puntoA, puntoB)}")
+        print(f"La distancia entre {puntoA} y {puntoB} es {total}")
     if puntoB < puntoA:
-        print(f"La distancia entre {puntoB} y {puntoA} "
-              f"es {distancia(puntoA, puntoB)}")
+        print(f"La distancia entre {puntoB} y {puntoA} es {total}")
     
 if __name__ == "__main__":
     prueba()
