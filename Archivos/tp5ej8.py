@@ -17,11 +17,11 @@ def cifrado_cesar(texto, rotado):
     texto_cifrado_caracteres = []
     i = 0
     while i < len(texto):
-        if (ord(texto[i])+int(rotado)) <= 122:
+        if (ord(texto[i])+int(rotado)) <= ord("z"):
             texto_cifrado.append(ord(texto[i])+int(rotado))
             texto_cifrado_caracteres.append(chr(texto_cifrado[i]))
-        if (ord(texto[i])+int(rotado)) > 122:
-            texto_cifrado.append(ord(texto[i])+int(rotado)-58)
+        if (ord(texto[i])+int(rotado)) > ord("z"):
+            texto_cifrado.append(ord(texto[i])+int(rotado)-(ord("z")-ord("@")))
             texto_cifrado_caracteres.append(chr(texto_cifrado[i]))
         i = i + 1
     cifrado = [texto_cifrado, texto_cifrado_caracteres]
@@ -36,10 +36,10 @@ def descifrado_cesar(texto_cifrado, rotado):
     texto_descifrado_unicode = []
     i = 0
     while i < len(texto_cifrado):
-        if (texto_cifrado[i])-int(rotado) <= 65:
-            texto_descifrado.append(chr(texto_cifrado[i]-int(rotado)+58))
+        if (texto_cifrado[i])-int(rotado) < int(ord("A")):
+            texto_descifrado.append(chr(texto_cifrado[i]-int(rotado)+(ord("z")-ord("@"))))
             texto_descifrado_unicode.append(ord(texto_descifrado[i]))
-        if (texto_cifrado[i])-int(rotado) > 65:
+        if (texto_cifrado[i])-int(rotado) >= int(ord("A")):
             texto_descifrado.append(chr(texto_cifrado[i]-int(rotado)))
             texto_descifrado_unicode.append(ord(texto_descifrado[i]))
         i = i + 1
