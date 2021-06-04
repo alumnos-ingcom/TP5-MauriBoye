@@ -6,23 +6,7 @@
 """
 Ejercicio N°3
 """
-import tp5ej1
-
-def ingreso_numero_entero_positivo(mensaje):
-    """
-    Esta funcion muestra un mensaje para indicar el ingreso
-    de un número entero positivo.
-    """
-    ingreso = input(mensaje)
-    try:
-        entero = int(ingreso)
-        if (entero >= 3):
-            return entero
-        else:
-            raise tp5ej1.IngresoIncorrecto(f"'{ingreso}' no es "
-                                           "positivo y >= 3")
-    except ValueError as err:
-        raise tp5ej1.IngresoIncorrecto(f"'{ingreso}' no es un número!") from err
+import tp5ej1, tp5ej2
     
 def tribonacci(posicion):
     """
@@ -46,8 +30,9 @@ def tribonacci(posicion):
 def prueba():
     tp5ej1.marco("tribonacci()")
     print("Ingrese una posicion de la sucesión de tribonacci")
-    posicion = ingreso_numero_entero_positivo("Posicion: ")
-    print(f"Valor = {tribonacci(posicion)}")
+    posicion = tp5ej2.ingreso_numero_entero_positivo("Posicion: ",3)
+    valor = tribonacci(posicion)
+    print(f"Valor = {valor}")
     
 if __name__ == "__main__":
     prueba()
