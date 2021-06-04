@@ -6,22 +6,7 @@
 """
 Ejercicio N°4
 """
-import tp5ej1
-
-def ingreso_numero_positivo(mensaje):
-    """
-    Esta funcion muestra un mensaje para indicar el ingreso
-    de un número entero positivo.
-    """
-    ingreso = input(mensaje)
-    try:
-        entero = int(ingreso)
-        if (entero > 0):
-            return entero
-        else:
-            raise tp5ej1.IngresoIncorrecto(f"'{ingreso}' no es positivo!")
-    except ValueError as err:
-        raise tp5ej1.IngresoIncorrecto(f"'{ingreso}' no es un número!") from err
+import tp5ej1, tp5ej2
 
 def numero_perfecto(numero):
     """
@@ -33,14 +18,11 @@ def numero_perfecto(numero):
         if (numero % i == 0):
             suma_divisores = suma_divisores + i
         i = i + 1
-    if (suma_divisores == numero):
-        return True
-    else:
-        return False
+    return suma_divisores == numero
     
 def prueba():
     tp5ej1.marco("numero_perfecto()")
-    numero = ingreso_numero_positivo("Ingrese un numero: ")
+    numero = tp5ej2.ingreso_numero_entero_positivo("Ingrese un numero: ",0)
     if (numero_perfecto(numero)):
         print(f"{numero} si es un numero perfecto")
     else:
