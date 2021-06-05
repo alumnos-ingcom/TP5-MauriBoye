@@ -8,7 +8,7 @@ Ejercicio N°2
 """
 import tp5ej1
 
-def ingreso_numero_entero_positivo(mensaje, numero_minimo):
+def ingreso_numero_entero_positivo(mensaje, numero_minimo=0):
     """
     Esta funcion muestra un mensaje para indicar el ingreso
     de un número entero positivo.
