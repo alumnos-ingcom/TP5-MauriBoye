@@ -8,7 +8,7 @@ Ejercicio N°6
 """
 import tp5ej1
     
-def caracteres_balanceados(cadena, abrir, cerrar):
+def caracteres_balanceados(cadena, abrir="[", cerrar="]"):
     """
     Esta funcion indica si una cadena de caracteres esta balanceada
     """
@@ -32,7 +32,7 @@ def caracteres_balanceados(cadena, abrir, cerrar):
 def prueba():
     tp5ej1.marco("caracteres_balanceados()")
     cadena = input("Ingrese una cadena de caracteres: ")
-    if caracteres_balanceados(cadena, abrir="[", cerrar="]"):
+    if caracteres_balanceados(cadena):
         print(f"Los caracteres '{cadena}' estan balanceados")
     else:
         print(f"Los caracteres '{cadena}' no estan balanceados")
