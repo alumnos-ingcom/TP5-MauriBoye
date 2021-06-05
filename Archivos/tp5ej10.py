@@ -14,11 +14,13 @@ def conversion_binario(numero):
     cadena de texto con su conversion a binario
     """
     conversion = ""
+    binario_python = bin(numero)[2:]
     while numero >= 1:
-        binario = numero%2
+        binario = numero % 2
         numero = numero // 2
         conversion = str(binario) + conversion
-    return conversion
+    if conversion == binario_python:
+        return conversion
 
 def conversion_entero(numero):
     """
