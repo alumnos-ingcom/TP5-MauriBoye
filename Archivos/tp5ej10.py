@@ -19,8 +19,7 @@ def conversion_binario(numero):
         binario = numero % 2
         numero = numero // 2
         conversion = str(binario) + conversion
-    if conversion == binario_python:
-        return conversion
+    return conversion, binario_python
 
 def conversion_entero(numero):
     """
@@ -42,12 +41,13 @@ def conversion_entero(numero):
 
 def prueba():
     numero = tp5ej2.ingreso_numero_entero_positivo("Ingrese un numero: ",0)
-    binario = conversion_binario(numero)
+    binario, binario_python = conversion_binario(numero)
     entero = conversion_entero(binario)
     tp5ej1.marco("conversion_binario()")
-    print(f"La conversion de {numero} a binario es {binario}")
-    tp5ej1.marco("conversion_entero()")
-    print(f"La conversion de {binario} a entero es {entero}")
+    if binario == binario_python:
+        print(f"La conversion de {numero} a binario es {binario}")
+        tp5ej1.marco("conversion_entero()")
+        print(f"La conversion de {binario} a entero es {entero}")
     
 if __name__ == "__main__":
     prueba()
