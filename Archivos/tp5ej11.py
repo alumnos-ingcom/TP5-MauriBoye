@@ -8,10 +8,6 @@ Ejercicio N°11
 """
 import tp5ej1
 
-class IngresoIncorrecto(Exception):
-    """Esta es la Excepcion para el ingreso incorrecto"""
-    pass
-
 def promedio_movil(lista_numeros_enteros, cantidad_valores):
     i = 0
     cantidad_valores = int(cantidad_valores)
@@ -27,10 +23,10 @@ def promedio_movil(lista_numeros_enteros, cantidad_valores):
             lista_promedio_movil.append(promedio_movil)
             i = i + 1
     elif cantidad_valores <= 0:
-        raise IngresoIncorrecto("La cantidad de valores para promediar es "
+        raise tp5ej1.IngresoIncorrecto("La cantidad de valores para promediar es "
                                 "menor o igual a '0'")
     else:
-        raise IngresoIncorrecto("La cantidad de valores para promediar es "
+        raise tp5ej1.IngresoIncorrecto("La cantidad de valores para promediar es "
                                 "mayor a la cantidad de elementos de la lista")
     return lista_promedio_movil
     
